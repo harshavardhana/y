@@ -12,9 +12,10 @@
   <p>
     {{> board }}
   </p>
-  <div class="input-wrapper">
+  <div class="input-wrapper" text-wrap="normal">
     <input type="button" value="Restart" class="reset_board" style="border-style:none;" />
     <input type="button" value="Undo" class="undo_move" style="border-style:none;" />
+    {{> listMoves}}
   </div>
 </template>
 
@@ -28,13 +29,29 @@
     {{#each lastMove}}
       {{>lastMoveTemplate}}
     {{/each}}
+    {{#each stones}}
+      {{>stone}}
+    {{/each}}
   </svg>
 </template>
 
 <template name="move">
-  <circle cx="{{this.x}}" cy="{{this.y}}" r="{{rsize}}" fill="{{color}}" opacity="{{opacity}}" />
+  <circle cx="{{cx}}" cy="{{cy}}" r="10" fill="{{color}}" opacity="1" />
+</template>
+
+<template name="stone">
+  <circle cx="{{this.x}}" cy="{{this.y}}" r="17" fill="yellow" opacity="0" />
 </template>
 
 <template name="lastMoveTemplate">
-  <circle cx="{{this.x}}" cy="{{this.y}}" r="4" fill="red" opacity="1" />
+  <circle cx="{{cx}}" cy="{{cy}}" r="4" fill="red" opacity="1" />
+</template>
+
+<template name="listMoves">
+  <div style="width: 500px">
+    Moves: <br />
+    {{#each moves}}
+      {{this.name}}&nbsp;
+    {{/each}}
+  </div>
 </template>

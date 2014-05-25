@@ -4,9 +4,6 @@
 </head>
 
 <body>
-  <audio id="stone-sound" preload="auto" volume="0.5" autobuffer>
-    <source src="stone.ogg">
-  </audio>
   <h1 align="center"> Y (Game) </h1>
   {{> game }}
 </body>
@@ -16,8 +13,8 @@
     {{> board }}
   </p>
   <div class="input-wrapper">
-    <input type="button" value="Restart" class="reset_board playsound" style="border-style:none;" />
-    <input type="button" value="Undo" class="undo_move playsound" style="border-style:none;" />
+    <input type="button" value="Restart" class="reset_board" style="border-style:none;" />
+    <input type="button" value="Undo" class="undo_move" style="border-style:none;" />
   </div>
 </template>
 

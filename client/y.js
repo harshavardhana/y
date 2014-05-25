@@ -12,10 +12,19 @@ Template.game.events({
       Moves.update(move._id, move);
     });
   },
-  'click .playsound': function() {
-    document.getElementById('stone-sound').play();
+});
+
+Deps.autorun(function () {
+  var moves = Moves.find().fetch();
+  var lastMove = _.max(moves, function(move) { return move.step; });
+  if (lastMove.step > 0) {
+    var audioElement = document.createElement('audio');
+    audioElement.setAttribute('src', 'stone.ogg');
+    audioElement.load();
+    audioElement.play();
   }
 });
+
 Template.board.helpers({
   moves: function() {
     return Moves.find();
@@ -45,7 +54,7 @@ Template.move.helpers({
 });
 
 Template.move.events({
-  'click': function(event, template) {
+  'click': function() {
     var moves = Moves.find().fetch();
     var lastMove = _.max(moves, function(move) { return move.step; });
     console.log(lastMove.step);
@@ -53,6 +62,5 @@ Template.move.events({
       this.step = lastMove.step + 1;
       Moves.update(this._id, this);
     }
-    document.getElementById('stone-sound').play();
   }
 });

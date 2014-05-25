@@ -1,7 +1,8 @@
 Template.game.events({
   'click .undo_move': function() {
     var lastMove = Moves.findOne({}, {sort: {step: -1}});
-    Moves.remove(lastMove._id);
+    if (typeof(lastMove) != 'undefined')
+      Moves.remove(lastMove._id);
   },
   'click .reset_board': function() {
     var moves = Moves.find().fetch();

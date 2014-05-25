@@ -84,18 +84,11 @@ Template.move.helpers({
 
 Template.stone.events({
   'click': function() {
-    var lastMove = Moves.findOne({}, {sort: {step: -1}});
-    var step = 1;
-    if(typeof lastMove != 'undefined') {
-      step = lastMove.step + 1;
-    }
-    if(step > 2) {
-      var conflictingMove = Moves.findOne({name: this.name});
-      if(typeof conflictingMove != 'undefined') {
-        return;
+    Meteor.call('move', this.name, function(error, id) {
+      if(error) {
+        console.log(error.reason);
       }
-    }
-    Moves.insert({name: this.name, step: step});
+    });
   }
 });
 

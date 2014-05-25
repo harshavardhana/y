@@ -101,6 +101,6 @@ Template.stone.events({
 
 Template.listMoves.helpers({
   moves: function() {
-    return Moves.find();
+    return Moves.find({}, {sort: {step: 1}});
   }
 });

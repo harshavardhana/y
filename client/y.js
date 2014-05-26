@@ -1,14 +1,11 @@
+Meteor.subscribe('stones');
+Meteor.subscribe('moves');
 Template.game.events({
   'click .undo_move': function() {
-    var lastMove = Moves.findOne({}, {sort: {step: -1}});
-    if (typeof(lastMove) != 'undefined')
-      Moves.remove(lastMove._id);
+    Meteor.call('undo');
   },
   'click .reset_board': function() {
-    var moves = Moves.find().fetch();
-    _.each(moves, function(move) {
-      Moves.remove(move._id);
-    });
+    Meteor.call('reset');
   }
 });
 

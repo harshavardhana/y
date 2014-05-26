@@ -1,5 +1,3 @@
-Meteor.subscribe('stones');
-Meteor.subscribe('moves');
 Template.game.events({
   'click .undo_move': function() {
     Meteor.call('undo');
@@ -24,7 +22,8 @@ Template.game.helpers({
 */
 
 Deps.autorun(function () {
-  //var lastMove = _.max(moves, function(move) { return move.step; });
+  Meteor.subscribe('stones');
+  Meteor.subscribe('moves');
   var lastMove = Moves.findOne({}, {sort: {step: -1}});
   if (typeof(lastMove) != 'undefined' && lastMove.step > 0) {
     var audioElement = document.createElement('audio');

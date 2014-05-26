@@ -1,3 +1,5 @@
+Meteor.subscribe('stones');
+Meteor.subscribe('moves');
 Template.game.events({
   'click .undo_move': function() {
     Meteor.call('undo');

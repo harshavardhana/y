@@ -81,6 +81,10 @@ Template.move.helpers({
 
 Template.stone.events({
   'click': function() {
+    var user = Meteor.user();
+    if (!user)
+      throw new Meteor.Error(500, 'Please sign in');
+
     Meteor.call('move', this.name, function(error, id) {
       if(error) {
         console.log(error.reason);

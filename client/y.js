@@ -25,8 +25,15 @@ Template.game.events({
     var user = Meteor.user();
     if (!userLoggedIn(user))
       return;
-
     Meteor.call('reset');
+  },
+
+  'click .mute': function() {
+    var mute = Session.get("mute");
+    if (mute === true)
+      Session.set("mute", false);
+    else
+      Session.set("mute", true);
   }
 });
 
@@ -50,9 +57,8 @@ Deps.autorun(function () {
   Meteor.subscribe('users');
   var lastMove = Moves.findOne({}, {sort: {step: -1}});
   if (typeof(lastMove) != 'undefined' && lastMove.step > 0) {
-    /*
-      Session.get("mute");
-      */
+    if (Session.get("mute"))
+      return;
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'stone.ogg');
     audioElement.load();

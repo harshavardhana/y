@@ -1,7 +1,7 @@
 function userLoggedIn(user) {
   var options = {
     userCloseable: false,
-    timeout: 2
+    timeout: 3000
   };
 
   if (user)

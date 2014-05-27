@@ -46,3 +46,7 @@ body {
 #stone-sound {
     display: none;
 }
+
+li.notification.warning {
+  background-color: #d2b48c;
+}

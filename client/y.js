@@ -1,8 +1,31 @@
+function userLoggedIn(user) {
+  var options = {
+    userCloseable: false,
+    timeout: 2
+  };
+
+  if (user)
+    return true;
+
+  Notifications.warn('Sign in',
+                     'Board changes not allowed, please sign in or feel free to watch :-)',
+                     options);
+  return false;
+}
+
 Template.game.events({
   'click .undo_move': function() {
+    var user = Meteor.user();
+    if (!userLoggedIn(user))
+      return;
     Meteor.call('undo');
   },
+
   'click .reset_board': function() {
+    var user = Meteor.user();
+    if (!userLoggedIn(user))
+      return;
+
     Meteor.call('reset');
   }
 });
@@ -26,6 +49,9 @@ Deps.autorun(function () {
   Meteor.subscribe('moves');
   var lastMove = Moves.findOne({}, {sort: {step: -1}});
   if (typeof(lastMove) != 'undefined' && lastMove.step > 0) {
+    /*
+      Session.get("mute");
+      */
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', 'stone.ogg');
     audioElement.load();
@@ -82,8 +108,8 @@ Template.move.helpers({
 Template.stone.events({
   'click': function() {
     var user = Meteor.user();
-    if (!user)
-      throw new Meteor.Error(500, 'Please sign in');
+    if (!userLoggedIn(user))
+      return;
 
     Meteor.call('move', this.name, function(error, id) {
       if(error) {

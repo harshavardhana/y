@@ -2,13 +2,24 @@
   "meteor": {},
   "dependencies": {
     "basePackages": {
-      "notifications": {}
+      "notifications": {},
+      "user-status": {}
     },
     "packages": {
       "notifications": {
         "git": "https://github.com/gfk-ba/meteor-notifications.git",
         "tag": "v0.4.8",
         "commit": "ed16633ce4996522907a41138b3ebc6134e15063"
+      },
+      "user-status": {
+        "git": "https://github.com/mizzao/meteor-user-status.git",
+        "tag": "v0.4.0",
+        "commit": "e2a1c7a4075f28b87b361387688e083a4b047a08"
+      },
+      "timesync": {
+        "git": "https://github.com/mizzao/meteor-timesync.git",
+        "tag": "v0.1.6",
+        "commit": "83067433f511bc13a11ae8c87e9a4d331256915e"
       }
     }
   }

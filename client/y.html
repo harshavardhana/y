@@ -4,10 +4,10 @@
 </head>
 
 <body>
-  <h1 align="center" style="width: 500px"> Y (Game) </h1>
+  <h1 style="width: 500px"> Y (Game) </h1>
   {{> loginButtons}}
   {{> notifications}}
-  {{> game }}
+  {{> game}}
 </body>
 
 <template name="game">
@@ -17,8 +17,15 @@
   <div class="input-wrapper" text-wrap="normal">
     <input type="button" value="Restart" class="reset_board" style="border-style:none;" />
     <input type="button" value="Undo" class="undo_move" style="border-style:none;" />
-    {{> listMoves}}
   </div>
+  <p>
+    Moves:
+    {{> listMoves}}
+  </p>
+  <p>
+    Online Users:
+    {{> usersOnline}}
+  </p>
 </template>
 
 <template name="board">
@@ -55,6 +62,16 @@
     {{#each moves}}
       {{this.name}}&nbsp;
     {{/each}}
+    </p>
+  </div>
+</template>
+
+<template name="usersOnline">
+  <div style="width: 500px">
+    <p>
+      {{#each users}}
+      {{this.username}}&nbsp;
+      {{/each}}
     </p>
   </div>
 </template>

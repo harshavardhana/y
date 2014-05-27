@@ -1,5 +1,6 @@
 {
   "packages": {
-    "notifications": {}
+    "notifications": {},
+    "user-status": {}
   }
 }

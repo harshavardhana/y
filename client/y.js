@@ -45,8 +45,9 @@ Template.game.helpers({
 */
 
 Deps.autorun(function () {
-  Meteor.subscribe('stones');
   Meteor.subscribe('moves');
+  Meteor.subscribe('stones');
+  Meteor.subscribe('users');
   var lastMove = Moves.findOne({}, {sort: {step: -1}});
   if (typeof(lastMove) != 'undefined' && lastMove.step > 0) {
     /*
@@ -122,5 +123,11 @@ Template.stone.events({
 Template.listMoves.helpers({
   moves: function() {
     return Moves.find({}, {sort: {step: 1}});
+  }
+});
+
+Template.usersOnline.helpers({
+  users: function() {
+    return Meteor.users.find({ "status.online": true });
   }
 });

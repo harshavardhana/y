@@ -30,10 +30,13 @@ Template.game.events({
 
   'click .mute': function() {
     var mute = Session.get("mute");
-    if (mute === true)
+    if (mute === true) {
+      document.getElementById("MuteButton").value = "Mute";
       Session.set("mute", false);
-    else
+    } else {
+      document.getElementById("MuteButton").value = "UnMute";
       Session.set("mute", true);
+    }
   }
 });
 

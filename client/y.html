@@ -6,23 +6,27 @@
 <body>
   {{> notifications}}
   {{> header}}
+  {{> forkme}}
   {{> game}}
 </body>
 
 <template name="header">
   <div class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#"> Y (Game) </a>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://en.wikipedia.org/wiki/Y_(game)"> Y (Game) </a>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons }}
+      </ul>
+    </div>
   </div>
-  <div class="navbar-collapse collapse">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="https://github.com/hyperbotics/y">GitHub</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      {{> loginButtons }} <!-- here -->
-    </ul>
+</template>
+
+<template name="forkme">
+  <div class="ribbon">
+    <a href="https://github.com/hyperbotics/y">Fork me on GitHub</a>
   </div>
-</div>
 </template>
 
 <template name="game">

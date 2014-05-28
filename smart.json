@@ -1,6 +1,8 @@
 {
   "packages": {
     "notifications": {},
-    "user-status": {}
+    "user-status": {},
+    "bootstrap-3": {},
+    "accounts-ui-bootstrap-3": {}
   }
 }

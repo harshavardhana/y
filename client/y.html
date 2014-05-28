@@ -8,6 +8,9 @@
   {{> header}}
   {{> forkme}}
   {{> game}}
+  {{> listMovesBlack}}
+  {{> listMovesWhite}}
+  {{> usersOnline}}
 </body>
 
 <template name="header">
@@ -24,8 +27,10 @@
 </template>
 
 <template name="forkme">
-  <div class="ribbon">
-    <a href="https://github.com/hyperbotics/y">Fork me on GitHub</a>
+  <div class="github-fork-ribbon-wrapper right">
+    <div class="github-fork-ribbon">
+      <a href="https://github.com/hyperbotics/y">Fork me on GitHub</a>
+    </div>
   </div>
 </template>
 
@@ -38,14 +43,6 @@
     <input type="button" value="Undo" id="UndoButton" class="undo_move" style="border-style:none;" />
     <input type="button" value="Mute" id="MuteButton" class="mute" style="border-style:none;" />
   </div>
-  <p>
-    Moves:
-    {{> listMoves}}
-  </p>
-  <p>
-    Online Users:
-    {{> usersOnline}}
-  </p>
 </template>
 
 <template name="board">
@@ -76,21 +73,35 @@
   <circle cx="{{cx}}" cy="{{cy}}" r="4" fill="red" opacity="1" />
 </template>
 
-<template name="listMoves">
-  <div style="width: 500px">
+<template name="listMovesBlack">
+  <div class="black">
     <p>
-    {{#each moves}}
-      {{this.name}}&nbsp;
-    {{/each}}
+      Black: <br />
+      {{#each moves}}
+      {{this.name}} <br />
+      {{/each}}
+    </p>
+  </div>
+</template>
+
+<template name="listMovesWhite">
+  <div class="white">
+    <p>
+      White: <br />
+      {{#each moves}}
+      {{this.name}} <br />
+      {{/each}}
     </p>
   </div>
 </template>
 
 <template name="usersOnline">
-  <div style="width: 500px">
+  <div class="usersonline">
     <p>
+      OnlineUsers: <br />
+      <br />
       {{#each users}}
-      {{this.username}}&nbsp;
+      {{this.username}} <br />
       {{/each}}
     </p>
   </div>

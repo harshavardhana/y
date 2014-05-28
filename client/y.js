@@ -40,20 +40,6 @@ Template.game.events({
   }
 });
 
-/*
-Template.game.helpers({
-  listMoves: function() {
-    var moves = Moves.find({}, {sort: {step: 1}}).fetch();
-    console.log(moves);
-    var result = "";
-    for(var i = 0; i< moves.length; i++) {
-      result = result + moves[i].name;
-    }
-    return result;
-  }
-});
-*/
-
 Deps.autorun(function () {
   Meteor.subscribe('moves');
   Meteor.subscribe('stones');
@@ -129,9 +115,23 @@ Template.stone.events({
   }
 });
 
+/*
 Template.listMoves.helpers({
   moves: function() {
     return Moves.find({}, {sort: {step: 1}});
+  }
+});
+*/
+
+Template.listMovesBlack.helpers({
+  moves: function() {
+    return Moves.find({step: {$mod: [2, 1]}}, {sort: {step: 1}});
+  }
+});
+
+Template.listMovesWhite.helpers({
+  moves: function() {
+    return Moves.find({step: {$mod: [2, 0]}}, {sort: {step: 1}});
   }
 });
 

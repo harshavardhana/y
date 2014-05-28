@@ -4,6 +4,7 @@
     position: relative;
     margin-left: 70px;
     background-color: rgba(210,180,140,1);
+    color: black;
     font-family: 'sans-serif';
     font-size: 1em;
     -webkit-border-radius: 8px;
@@ -26,6 +27,19 @@
 
 .input-wrapper input:hover {
     background-color: red;
+}
+
+.navbar-default {
+    background-color: #faf8ef;
+}
+
+#login-dropdown-list input {
+    background-color: #faf8ef;
+    color: black;
+}
+
+#login-dropdown-list .dropdown-menu {
+    background-color: #faf8ef;
 }
 
 html {

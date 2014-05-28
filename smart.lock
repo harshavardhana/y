@@ -3,7 +3,9 @@
   "dependencies": {
     "basePackages": {
       "notifications": {},
-      "user-status": {}
+      "user-status": {},
+      "bootstrap-3": {},
+      "accounts-ui-bootstrap-3": {}
     },
     "packages": {
       "notifications": {
@@ -15,6 +17,16 @@
         "git": "https://github.com/mizzao/meteor-user-status.git",
         "tag": "v0.4.0",
         "commit": "e2a1c7a4075f28b87b361387688e083a4b047a08"
+      },
+      "bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
+        "tag": "v3.1.1-1",
+        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+      },
+      "accounts-ui-bootstrap-3": {
+        "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
+        "tag": "v0.3.0-1",
+        "commit": "93ffa5d0e325dc7026de89f6d90c178fa04bdd3a"
       },
       "timesync": {
         "git": "https://github.com/mizzao/meteor-timesync.git",

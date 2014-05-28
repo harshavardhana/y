@@ -5,6 +5,7 @@
 
 standard-app-packages
 accounts-password
-accounts-ui
 notifications
 user-status
+bootstrap-3
+accounts-ui-bootstrap-3

@@ -65,6 +65,8 @@ li.notification.warning {
 }
 
 .black {
+    text-align: center;
+    font-size: 1em;
     overflow: hidden;
     white-space: nowrap;
     position: absolute;
@@ -75,6 +77,8 @@ li.notification.warning {
 }
 
 .white {
+    text-align: center;
+    font-size: 1em;
     overflow: hidden;
     white-space: nowrap;
     position: absolute;

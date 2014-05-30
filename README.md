@@ -1,4 +1,4 @@
-Y
+The Game of Y
 ====
 
      The Game of Y is the intellectual property and proprietary trademark of

@@ -38,3 +38,8 @@ Ok, everything's ready. Here comes Meteor!
 
 => App running at: http://localhost:3000/
 ~~~
+
+
+     The Game of Y is the intellectual property and proprietary trademark of
+     Kadon Enterprises, Inc.,www.gamepuzzles.com, used by Hyperbotics by
+     permission.

@@ -63,7 +63,9 @@ Template.board.helpers({
     return Stones.find();
   },
   lastMove: function() {
-    return [Moves.findOne({}, {sort: {step: -1}})];
+    var lastMove = Moves.findOne({}, {sort: {step: -1}});
+    if (typeof(lastMove) != 'undefined')
+      return [lastMove];
   }
 });
 

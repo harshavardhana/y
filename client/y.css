@@ -33,15 +33,15 @@
     background-color: red;
 }
 
-
-.navbar-default {
-    background-color: #faf8ef;
-}
-
 .navbar {
     margin-left: 250px;
     margin-right: 250px;
     border: 2px solid;
+    background: #faf8ef;
+}
+
+.navbar-default .navbar-brand {
+    color: black;
 }
 
 #login-dropdown-list input {

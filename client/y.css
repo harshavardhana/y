@@ -1,8 +1,11 @@
 /* CSS declarations go here */
 
-.input-wrapper input {
+#buttons {
+    margin-left: 400px;
+}
+
+#input-wrapper {
     position: relative;
-    margin-left: 70px;
     background-color: rgba(210,180,140,1);
     color: black;
     font-family: 'sans-serif';
@@ -23,14 +26,22 @@
     -ms-transition: all .1s ease;
     -o-transition: all .1s ease;
     transition: all .1s ease;
+    margin-left: 70px;
 }
 
-.input-wrapper input:hover {
+#input-wrapper:hover {
     background-color: red;
 }
 
+
 .navbar-default {
     background-color: #faf8ef;
+}
+
+.navbar {
+    margin-left: 250px;
+    margin-right: 250px;
+    border: 2px solid;
 }
 
 #login-dropdown-list input {
@@ -42,18 +53,35 @@
     background-color: #faf8ef;
 }
 
-html {
-    display: table;
-    margin: auto;
-}
-
-body {
-    display: table-cell;
-    vertical-align: middle;
+html, body {
+    height: 100%;
     background: #faf8ef;
     color: #776e65;
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 18px;
+}
+
+#board {
+    margin-left: 400px;
+}
+
+#wrap {
+    min-height: 100%;
+}
+
+#main {
+    overflow:auto;
+    padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+
+.footer {
+    position: relative;
+    margin-top: auto;
+    height: 150px;
+    clear: both;
+    padding-top:20px;
+    font-size: 12px;
+    text-align: center;
 }
 
 #stone-sound {
@@ -62,6 +90,8 @@ body {
 
 li.notification.warning {
     background-color: #d2b48c;
+    border: 1px solid;
+    border-color: black;
 }
 
 .black {

@@ -11,12 +11,23 @@
   {{> listMovesBlack}}
   {{> listMovesWhite}}
   {{> usersOnline}}
+  <footer class="footer">
+    <div id="wrap">
+      <div id="main" class="container clear-top">
+        <p id="copyright" property="dc:rights">&copy;
+          <span property="dc:dateCopyrighted">2014</span>
+          <span property="dc:publisher">The Game of Y is the intellectual property and proprietary trademark of
+            Kadon Enterprises, Inc.,www.gamepuzzles.com, used by Hyperbotics by permission.</span>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
 
 <template name="header">
   <div class="navbar navbar-default" role="navigation">
     <div class="navbar-header">
-      <a class="navbar-brand" href="http://en.wikipedia.org/wiki/Y_(game)"> Y (Game) </a>
+      <a class="navbar-brand" href="http://en.wikipedia.org/wiki/Y_(game)"> The Game of Y </a>
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -38,15 +49,15 @@
   <p>
     {{> board }}
   </p>
-  <div class="input-wrapper" text-wrap="normal">
-    <input type="button" value="Restart" id="ResetButton" class="reset_board" style="border-style:none;" />
-    <input type="button" value="Undo" id="UndoButton" class="undo_move" style="border-style:none;" />
-    <input type="button" value="Mute" id="MuteButton" class="mute" style="border-style:none;" />
+  <div id="buttons" text-wrap="normal">
+    <input id="input-wrapper" type="button" value="Restart" class="reset_board" style="border-style:none;" />
+    <input id="input-wrapper" type="button" value="Undo" class="undo_move" style="border-style:none;" />
+    <input id="input-wrapper" type="button" value="Mute" class="mute" style="border-style:none;" />
   </div>
 </template>
 
 <template name="board">
-  <svg width="500" height="500">
+  <svg id="board" width="500" height="500">
     <rect width="500" height="500" fill="tan" stroke="black" stroke-width="2" />
     <image width="500" height="500" type="image/svg+xml" xlink:href="y-annotated.svg" />
     {{#each moves}}

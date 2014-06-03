@@ -13,6 +13,22 @@ function userLoggedIn(user) {
   return false;
 }
 
+function CopyMoves(moves) {
+  bootbox.dialog({
+    message: moves.toString(),
+    title: "Ctrl-C to Copy",
+    buttons: {
+      main: {
+        label: "Okay",
+        classname: "btn-primary",
+        callback: function() {
+          console.log (moves);
+        }
+      }
+    }
+  });
+}
+
 Template.game.events({
   'click .undo_move': function() {
     var user = Meteor.user();
@@ -31,12 +47,21 @@ Template.game.events({
   'click .mute': function() {
     var mute = Session.get("mute");
     if (mute === true) {
-      document.getElementById("MuteButton").value = "Mute";
+      document.getElementById("mute-button").value = "Mute";
       Session.set("mute", false);
     } else {
-      document.getElementById("MuteButton").value = "UnMute";
+      document.getElementById("mute-button").value = "UnMute";
       Session.set("mute", true);
     }
+  },
+
+  'click .copymoves': function() {
+    var moves = Moves.find({},
+                           {name: 1,
+                            sort: {step: 1}}).map(function (x)
+                                                  { return x.name });
+    if (typeof(moves) != 'undefined')
+      CopyMoves (moves);
   }
 });
 

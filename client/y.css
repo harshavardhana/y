@@ -34,14 +34,16 @@
 }
 
 .navbar {
-    margin-left: 250px;
-    margin-right: 250px;
+    margin-left: 350px;
+    margin-right: 350px;
     border: 2px solid;
     background: #faf8ef;
+    font-size: medium;
 }
 
 .navbar-default .navbar-brand {
     color: black;
+    font-size: medium;
 }
 
 #login-dropdown-list input {

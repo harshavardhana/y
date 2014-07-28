@@ -164,6 +164,9 @@ Template.listMovesWhite.helpers({
 
 Template.usersOnline.helpers({
   users: function() {
-    return Meteor.users.find({ "status.online": true });
+    return Meteor.users.find({ "status.online": true })
+        .map(function (user) {
+      return (user.profile && user.profile.name) || user.username;
+    });
   }
 });

@@ -11,33 +11,33 @@
     "packages": {
       "notifications": {
         "git": "https://github.com/gfk-ba/meteor-notifications.git",
-        "tag": "v0.4.8",
-        "commit": "ed16633ce4996522907a41138b3ebc6134e15063"
+        "tag": "v0.5.3",
+        "commit": "77bc03bc8027f33603e374bfd8ea90dcd42fb7f5"
       },
       "user-status": {
         "git": "https://github.com/mizzao/meteor-user-status.git",
-        "tag": "v0.4.0",
-        "commit": "e2a1c7a4075f28b87b361387688e083a4b047a08"
+        "tag": "v0.6.0",
+        "commit": "dba80d742522ac104f2155f1db852922e4249f96"
       },
       "bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-bootstrap-3.git",
-        "tag": "v3.1.1-1",
-        "commit": "63dd38968828bb8963636df93e9a1c45e2dfe67e"
+        "tag": "v3.2.0-1",
+        "commit": "17a63902fc6cf1096c5289d963c66cf28b474727"
       },
       "accounts-ui-bootstrap-3": {
         "git": "https://github.com/mangasocial/meteor-accounts-ui-bootstrap-3.git",
-        "tag": "v0.3.0-1",
-        "commit": "93ffa5d0e325dc7026de89f6d90c178fa04bdd3a"
+        "tag": "v0.3.3",
+        "commit": "2e50b605d8d5ed68e48c4529a65f13552d8af3f9"
       },
       "bootboxjs": {
         "git": "https://github.com/TimHeckel/meteor-bootboxjs.git",
-        "tag": "v4.2.0",
-        "commit": "2b7d18ad028d9e7b37238ecf2a8a7970735cebd1"
+        "tag": "v4.2.1-master.1",
+        "commit": "c125969c1f3aef30e2a2ff20252bd3b2e4014b2f"
       },
       "timesync": {
         "git": "https://github.com/mizzao/meteor-timesync.git",
-        "tag": "v0.1.6",
-        "commit": "83067433f511bc13a11ae8c87e9a4d331256915e"
+        "tag": "v0.2.1",
+        "commit": "fa4abd511f4e32a3c5d22795ce2c1e8369428fac"
       }
     }
   }

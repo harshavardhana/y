@@ -33,6 +33,10 @@
     background-color: red;
 }
 
+.bootbox-body {
+    word-break: break-word;
+}
+
 .navbar {
     margin-left: 350px;
     margin-right: 350px;

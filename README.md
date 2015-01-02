@@ -46,4 +46,3 @@ Ok, everything's ready. Here comes Meteor!
 
 => App running at: http://localhost:3000/
 ~~~
-

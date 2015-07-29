@@ -4,10 +4,10 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-accounts-password
 mizzao:user-status@0.6.0
-mrt:accounts-ui-bootstrap-3@0.3.3
 mizzao:bootboxjs@4.2.1-master.1
 gfk:notifications
-mizzao:bootstrap-3
 
+accounts-ui
+twbs:bootstrap
+accounts-password

@@ -11,3 +11,4 @@ gfk:notifications
 accounts-ui
 twbs:bootstrap
 accounts-password
+standard-minifiers
